@@ -912,12 +912,13 @@ footer{padding:56px 24px 0;border-top:1px solid var(--brd)}
   @media(min-width: 768px) { .ls-arr { display: flex; align-items: center; justify-content: center; } }
 
   
-  /* Ensure desktop page always scrolls */
-  @media(min-width:768px){
-    html, body { overflow-x:hidden; overflow-y:auto !important; }
-    .hero-slide { min-height: min(90vh, 860px); }
-    .hs1-img { object-position: 50% 45%; }
-  }
+  /* Desktop: responsive object-position — slide stays visible as screen widens */
+  @media(min-width:768px)  { .hs1-img { object-position: 50% 50%; } }
+  @media(min-width:1024px) { .hs1-img { object-position: 50% 40%; } }
+  @media(min-width:1280px) { .hs1-img { object-position: 50% 28%; } }
+  @media(min-width:1440px) { .hs1-img { object-position: 50% 18%; } }
+  @media(min-width:1600px) { .hs1-img { object-position: 50% 10%; } }
+  @media(min-width:768px)  { html, body { overflow-x:hidden; overflow-y:auto !important; } }
 
   </style>
 </head>
