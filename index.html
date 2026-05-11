@@ -69,6 +69,14 @@ button{background:none;border:none;cursor:pointer;font-family:inherit;color:inhe
   position:relative;overflow:hidden;
   height:calc(100svh - 36px);min-height:580px;
 }
+/* Desktop: use min-height so hero is tall but page can scroll freely */
+@media(min-width:768px){
+  .hero-carousel{
+    height:auto;
+    min-height:min(90vh, 860px);
+    max-height:none;
+  }
+}
 /* Track */
 .hero-track{
   display:flex;height:100%;
@@ -902,6 +910,14 @@ footer{padding:56px 24px 0;border-top:1px solid var(--brd)}
   .ls-arr-l { left: 16px; }
   .ls-arr-r { right: 16px; }
   @media(min-width: 768px) { .ls-arr { display: flex; align-items: center; justify-content: center; } }
+
+  
+  /* Ensure desktop page always scrolls */
+  @media(min-width:768px){
+    html, body { overflow-x:hidden; overflow-y:auto !important; }
+    .hero-slide { min-height: min(90vh, 860px); }
+    .hs1-img { object-position: 50% 45%; }
+  }
 
   </style>
 </head>
